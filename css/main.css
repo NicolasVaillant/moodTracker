@@ -1,0 +1,183 @@
+body {
+  background: var(--w);
+  overflow-x: hidden;
+  width: 100%;
+  --sidenav-background:var(--grey-container);
+  --wrapper-background:#fff;
+}
+body main {
+  font-family: "Rubik", "Open Sans", sans-serif, Bahnschrift;
+}
+body main .sidenav {
+  height: 100%;
+  width: 30%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: var(--sidenav-background);
+  border-right: 1px solid var(--grey-border);
+  overflow-x: hidden;
+  padding: 1em;
+}
+body main .sidenav .header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+body main .sidenav .header .top-bar-settings,
+body main .sidenav .header .user-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  gap: 1em;
+}
+body main .sidenav .header .top-bar-settings {
+  height: var(--top-bar-height);
+  flex-direction: row;
+  justify-content: flex-end;
+}
+body main .sidenav .header .top-bar-settings .ico-modification,
+body main .sidenav .header .top-bar-settings .ico-settings {
+  background: var(--grey-container);
+  padding: 0.8em 1em;
+  border-radius: 5px;
+  cursor: pointer;
+}
+body main .sidenav .header .user-wrapper {
+  justify-content: flex-start;
+}
+body main .sidenav .header .user-wrapper .profile-picture {
+  width: 18%;
+  aspect-ratio: 1;
+  border-radius: 1000px;
+  background: var(--grey-border);
+}
+body main .sidenav .header .user-wrapper .profile-name {
+  font-size: var(--font-large);
+}
+body main .sidenav .shortcut-access {
+  margin-top: 1em;
+}
+body main .sidenav .shortcut-access .current-mood {
+  padding: 1em 0;
+}
+body main .sidenav .shortcut-access .current-mood .current-mood-day .current-mood-label {
+  font-weight: bold;
+}
+body main .sidenav .shortcut-access .current-mood-action button {
+  background: var(--main-color);
+  color: var(--w);
+  padding: 1em;
+  border: 0;
+  width: 100%;
+}
+body main .sidenav .shortcut-access .current-mood-action button.modify-current-mood {
+  display: none;
+}
+body main .wrapper--content {
+  margin-left: 30%;
+  padding: 1em 2em;
+  height: auto;
+  background: var(--wrapper-background);
+}
+body main .wrapper--content .header {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: calc(var(--top-bar-height) + 1em);
+}
+body main .wrapper--content .header .webapp-title {
+  font-size: var(--font-large);
+}
+body main .wrapper--content .header .current-date-day {
+  color: var(--grey-font);
+}
+body main .wrapper--content .wrapper-calendar {
+  margin: 2em 0;
+}
+body main .wrapper--content .wrapper-calendar .header-calendar .title-calendar {
+  font-size: var(--font-medium);
+  color: var(--grey-font);
+}
+body main .wrapper--content .wrapper-calendar .calendar-year-label {
+  position: sticky;
+  top: 0;
+  background: var(--w);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  width: 100%;
+  padding: 0.5em 0;
+}
+body main .wrapper--content .wrapper-calendar .calendar-year-label .current-month {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  opacity: 0;
+  transition: all 0.5s;
+}
+body main .wrapper--content .wrapper-calendar .calendar-year-label .current-month .current-date-day-sticky {
+  color: var(--grey-font);
+}
+body main .wrapper--content .wrapper-calendar .calendar-year-label .current-month.show-element {
+  opacity: 1;
+}
+body main .wrapper--content .wrapper-calendar .calendar-year-label .week-label {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+  width: 100%;
+}
+body main .wrapper--content .wrapper-calendar .calendar-year-label .week-label .week {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5em;
+  width: 100%;
+}
+body main .wrapper--content .wrapper-calendar .calendar-year-label .week-label .week span {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  padding: 0.5em;
+  border-radius: 5px;
+  background: var(--grey-font);
+  border: 1px solid var(--grey-border);
+  color: var(--w);
+}
+body main .wrapper--content .wrapper-calendar .calendar-year {
+  display: grid;
+  grid-template-columns: repeat(14, 1fr);
+  gap: 0.5em;
+  width: 100%;
+}
+body main .wrapper--content .wrapper-calendar .calendar-year .mood-days {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  padding: 0.5em;
+  aspect-ratio: 1;
+  border-radius: 5px;
+  background: var(--grey-container);
+  cursor: pointer;
+}
+@media all and (max-width: 1100px) {
+  body main .wrapper--content .wrapper-calendar .calendar-year {
+    grid-template-columns: repeat(7, 1fr);
+  }
+  body main .wrapper--content .wrapper-calendar .calendar-year-label .week.row-2 {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

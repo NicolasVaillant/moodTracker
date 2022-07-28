@@ -1,0 +1,198 @@
+@mixin centerFlex{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+body{
+    background: var(--w);
+    overflow-x: hidden;
+    width: 100%;
+
+    --sidenav-background:var(--grey-container);
+    --wrapper-background:#fff;
+
+    main{
+        font-family: "Rubik", "Open Sans", sans-serif, Bahnschrift;
+        .sidenav {
+            height: 100%;
+            width: 30%;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: var(--sidenav-background);
+            border-right: 1px solid var(--grey-border);
+            overflow-x: hidden;
+            padding: 1em;
+
+            .header{
+                width: 100%;
+                @include centerFlex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                .top-bar-settings,
+                .user-wrapper{
+                    width: 100%;
+                    @include centerFlex;
+                    gap: 1em;
+                }
+
+                .top-bar-settings{
+                    height: var(--top-bar-height);
+                    flex-direction: row;
+                    justify-content: flex-end;
+
+                    .ico-modification,
+                    .ico-settings{
+                        background: var(--grey-container);
+                        padding: .8em 1em;
+                        border-radius: 5px;
+                        cursor: pointer;
+                    }
+                }
+                .user-wrapper{
+                    justify-content: flex-start;
+                    .profile-picture{
+                        width: 18%;
+                        aspect-ratio: 1;
+                        border-radius: 1000px;
+                        background:var(--grey-border);
+                    }
+                    .profile-name{
+                        font-size: var(--font-large);
+                    }
+                }
+            }
+            .shortcut-access{
+                margin-top: 1em;
+                .current-mood{
+                    //background: var(--grey-border);
+                    //border-radius: 15px 15px 0 0;
+                    padding: 1em 0;
+                    .current-mood-day{
+                        .current-mood-label{
+                            font-weight: bold;
+                        }
+                    }
+                }
+                .current-mood-action{
+                    button{
+                        background: var(--main-color);
+                        color: var(--w);
+                        padding: 1em;
+                        border: 0;
+                        width: 100%;
+
+                        &.modify-current-mood{
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+        .wrapper--content{
+            margin-left: 30%;
+            padding: 1em 2em;
+            height: auto;
+            background: var(--wrapper-background);
+
+            .header{
+                @include centerFlex;
+                justify-content: space-between;
+                margin-top: calc(var(--top-bar-height) + 1em);
+                .webapp-title{
+                    font-size: var(--font-large);
+                }
+                .current-date-day{
+                    color: var(--grey-font);
+                }
+            }
+            .wrapper-calendar{
+                margin: 2em 0;
+                .header-calendar{
+                    .title-calendar{
+                        font-size: var(--font-medium);
+                        color: var(--grey-font);
+                    }
+                }
+                .calendar-year-label{
+                    position: sticky;
+                    top: 0;
+                    background: var(--w);
+                    display: flex;
+                    flex-direction: column;
+                    gap: .5em;
+                    width: 100%;
+                    padding: .5em 0;
+                    .current-month{
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        opacity: 0;
+                        transition: all .5s;
+                        .current-date-day-sticky{
+                            color: var(--grey-font);
+                        }
+                        &.show-element{
+                            opacity: 1;
+                        }
+                    }
+                    .week-label{
+                        display: flex;
+                        flex-direction: row;
+                        gap: .5em;
+                        width: 100%;
+                        .week{
+                            display: grid;
+                            grid-template-columns: repeat(7, 1fr);
+                            gap: .5em;
+                            width: 100%;
+                            span{
+                                @include centerFlex;
+                                padding: .5em;
+                                border-radius: 5px;
+                                background: var(--grey-font);
+                                border: 1px solid var(--grey-border);
+                                color: var(--w);
+                            }
+                        }
+                    }
+                }
+                .calendar-year{
+                    display: grid;
+                    grid-template-columns: repeat(14, 1fr);
+                    gap: .5em;
+                    width: 100%;
+                    .mood-days{
+                        @include centerFlex;
+                        padding: .5em;
+                        aspect-ratio: 1;
+                        border-radius: 5px;
+                        background: var(--grey-container);
+                        cursor: pointer;
+
+                        //&[uid="1"]{background: red}
+                        //&[uid="2"]{background: green}
+                        //&[uid="9"]{background: yellow}
+                        //&[offset="24"]{background: blue}
+                        //
+                        //&[date="before"]{opacity: .2}
+                        //&[date="after"]{opacity: 1}
+                    }
+
+                }
+                @media all and (max-width: 1100px) {
+                    .calendar-year{
+                        grid-template-columns: repeat(7, 1fr);
+                    }
+                    .calendar-year-label{
+                        .week.row-2{display: none}
+                    }
+                }
+            }
+        }
+    }
+}

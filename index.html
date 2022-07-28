@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="resources/ico/icons8_3d_touch.ico"/>
+    <link rel="shortcut icon" type="image/png" href="resources/ico/icons8_3d_touch_16.png" sizes="16x16"/>
+    <link rel="shortcut icon" type="image/png" href="resources/ico/icons8_3d_touch_32.png" sizes="32x32"/>
+    <link rel="stylesheet" href="fontawesome/css/all.css">
+    <link rel="stylesheet" href="css/root.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/author.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="css/calendar.css"/>
+    
+    <script src="js/script.js" defer></script>
+    <title>Moodtracker</title>
+</head>
+
+<body>
+<main>
+    <div class="sidenav">
+        <div class="header">
+            <div class="top-bar-settings">
+                <div class="ico-modification button-to-author">
+                    <i class="fas fa-pen-alt"></i>
+                </div>
+                <div class="ico-settings button-to-author">
+                    <i class="fas fa-sliders-h"></i>
+                </div>
+            </div>
+            <div class="user-wrapper">
+                <div class="profile-picture"></div>
+                <div class="profile-name">
+                    <p class="home-label">Bonjour Nicolas</p>
+                </div>
+            </div>
+        </div>
+        <div class="shortcut-access">
+            <div class="current-mood">
+                <p class="current-mood-day">
+                    Mood du jour : <span class="current-mood-label">Joyeux</span>
+                </p>
+            </div>
+            <div class="current-mood-action">
+                <button class="add-current-mood button-to-author">Ajouter le mood du jour</button>
+                <button class="modify-current-mood button-to-author">Modifier le mood du jour</button>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper--content">
+        <div class="header">
+            <p class="webapp-title">MoodTracker</p>
+            <div class="current-date-day">29/07/2022</div>
+        </div>
+        <div class="wrapper-calendar">
+            <div class="header-calendar">
+                <p class="title-calendar">Année en cours</p>
+            </div>
+            <div class="calendar-year-label">
+                <div class="current-month">
+                    <p class="current-month-label">Janvier</p>
+                    <p class="current-date-day-sticky">29/07/2022</p>
+                </div>
+                <div class="week-label">
+                    <div class="week">
+                        <span>L</span>
+                        <span>M</span>
+                        <span>Me</span>
+                        <span>J</span>
+                        <span>V</span>
+                        <span>S</span>
+                        <span>D</span>
+                    </div>
+                    <div class="week row-2">
+                        <span>L</span>
+                        <span>M</span>
+                        <span>Me</span>
+                        <span>J</span>
+                        <span>V</span>
+                        <span>S</span>
+                        <span>D</span>
+                    </div>
+                </div>
+            </div>
+            <div class="calendar-year"></div>
+        </div>
+    </div>
+</main>
+</body>
+
+</html>
